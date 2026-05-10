@@ -1,0 +1,14 @@
+@model LegacyOrderPortal.Models.ErrorViewModel
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>An error occurred</h2>
+<p>Sorry, an unexpected error occurred while processing your request.</p>
+@if (Model?.ShowRequestId == true)
+{
+    <p>
+        <strong>Request ID:</strong> @Model.RequestId
+    </p>
+}

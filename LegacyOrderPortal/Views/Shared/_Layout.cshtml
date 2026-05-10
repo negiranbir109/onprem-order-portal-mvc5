@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - LegacyOrderPortal</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")">LegacyOrderPortal</a>
+            <a href="@Url.Action("Index", "Orders")">Orders</a>
+            <a href="@Url.Action("Index", "Customers")">Customers</a>
+            <a href="@Url.Action("Index", "Products")">Products</a>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <p>Legacy internal portal &copy; LegacyOrderPortal</p>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/legacy-app.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

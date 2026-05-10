@@ -1,0 +1,22 @@
+@model LegacyOrderPortal.Models.Customer
+
+@{
+    ViewBag.Title = "Customer Details";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Customer Details</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>@Model.Name</dd>
+            <dt>Email</dt>
+            <dd>@Model.Email</dd>
+            <dt>Phone</dt>
+            <dd>@Model.Phone</dd>
+        </dl>
+        <p><a class="btn btn-primary" href="@Url.Action("Index")">Back to Customers</a></p>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+@model LegacyOrderPortal.Models.Order
+
+@{
+    ViewBag.Title = "Order Details";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Order Details</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Order Number</dt>
+            <dd>@Model.OrderNumber</dd>
+            <dt>Customer</dt>
+            <dd>@Model.Customer?.Name</dd>
+            <dt>Order Date</dt>
+            <dd>@Model.OrderDate.ToShortDateString()</dd>
+            <dt>Total Amount</dt>
+            <dd>@Model.TotalAmount.ToString("C")</dd>
+        </dl>
+        <h4>Items</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>SKU</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderItems)
+                {
+                    <tr>
+                        <td>@item.Product?.Name</td>
+                        <td>@item.Product?.SKU</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.UnitPrice.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <p><a class="btn btn-primary" href="@Url.Action("Index")">Back to List</a></p>
+    </div>
+</div>

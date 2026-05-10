@@ -1,0 +1,33 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+.container {
+  max-width: 1000px;
+}
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 15px;
+}
+.form-horizontal .control-label {
+  text-align: left;
+}
+.footer {
+  margin-top: 40px;
+  padding: 10px 0;
+  text-align: center;
+  color: #777;
+}

@@ -1,0 +1,42 @@
+@model IEnumerable<LegacyOrderPortal.ViewModels.OrderListViewModel>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Orders</h3>
+    </div>
+    <div class="panel-body">
+        <p><a class="btn btn-primary" href="@Url.Action("Create")">New Order</a></p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Items</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.OrderNumber</td>
+                        <td>@order.CustomerName</td>
+                        <td>@order.OrderDate.ToShortDateString()</td>
+                        <td>@order.TotalAmount.ToString("C")</td>
+                        <td>@order.ItemCount</td>
+                        <td>
+                            <a href="@Url.Action("Details", new { id = order.OrderId })">Details</a> |
+                            <a href="@Url.Action("Edit", new { id = order.OrderId })">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

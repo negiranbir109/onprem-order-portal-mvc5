@@ -1,0 +1,17 @@
+bin/
+obj/
+App_Data/*.mdf
+App_Data/*.ldf
+*.user
+*.suo
+*.vs/
+*.cache
+packages/
+*.log
+*/app.log
+*.dbmdl
+TestResults/
+_ReSharper*
+*.DotSettings.user
+*.ncrunch*
+.vscode/

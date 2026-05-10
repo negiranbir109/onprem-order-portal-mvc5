@@ -1,0 +1,24 @@
+@model LegacyOrderPortal.Models.Product
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Product Details</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>@Model.Name</dd>
+            <dt>SKU</dt>
+            <dd>@Model.SKU</dd>
+            <dt>Price</dt>
+            <dd>@Model.Price.ToString("C")</dd>
+            <dt>Description</dt>
+            <dd>@Model.Description</dd>
+        </dl>
+        <p><a class="btn btn-primary" href="@Url.Action("Index")">Back to Products</a></p>
+    </div>
+</div>

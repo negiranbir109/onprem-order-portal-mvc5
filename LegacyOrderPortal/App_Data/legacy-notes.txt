@@ -1,0 +1,3 @@
+LegacyOrderPortal is a legacy internal order management portal.
+Seed data and reporting are designed for on-prem operational workflows.
+App_Data is used for logs, local reports, and compatibility with classic ASP.NET deployment patterns.
