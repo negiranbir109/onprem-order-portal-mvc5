@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using LegacyOrderPortal.DAL;
+using LegacyOrderPortal.Logging;
 using LegacyOrderPortal.Models;
 using LegacyOrderPortal.ViewModels;
 
