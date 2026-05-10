@@ -25,16 +25,25 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.5
 
       - name: Restore NuGet packages
-        run: nuget restore
+        run: nuget restore LegacyOrderPortal.sln
 
       - name: Publish to folder
-        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+        run: >
+          msbuild LegacyOrderPortal\LegacyOrderPortal.csproj
+          /nologo
+          /verbosity:m
+          /p:Configuration=Release
+          /p:Platform=AnyCPU
+          /p:DeployOnBuild=true
+          /p:WebPublishMethod=FileSystem
+          /p:DeleteExistingFiles=true
+          /p:publishUrl="${{ github.workspace }}\published"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: ASP-app
-          path: '/published/**'
+          path: '${{ github.workspace }}\published\**'
 
   deploy:
     runs-on: windows-latest
@@ -48,7 +57,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ASP-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -63,4 +72,4 @@ jobs:
           app-name: 'legacy-order-portal-dotnet-app'
           slot-name: 'Production'
           package: .
-          
+
